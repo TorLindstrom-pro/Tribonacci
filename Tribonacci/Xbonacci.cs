@@ -2,8 +2,10 @@
 
 public class Xbonacci
 {
-	public static int[] Tribonacci(int[] signature, int i)
+	public static int[] Tribonacci(int[] signature, int length)
 	{
-		return [0, 0, 0, 0, 0];
+		var array = new int[length];
+		Array.Fill(array, 0);
+		return array;
 	}
 }
