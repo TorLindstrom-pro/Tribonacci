@@ -21,4 +21,12 @@ public class UnitTest1
         
         Assert.Equal(expectedResult, result);
     }
+    
+    [Fact(DisplayName = "All ones in signature returns normal tribonacci sequence")]
+    public void AllOnesInSignature_ReturnsNormalTribonacciSequence()
+    {
+        var result = Xbonacci.Tribonacci([1, 1, 1], 7);
+        
+        Assert.Equal([1, 1, 1, 3, 5, 9, 17], result);
+    }
 }
