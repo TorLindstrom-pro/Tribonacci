@@ -8,13 +8,8 @@ public class Xbonacci
 		
 		signature.CopyTo(array, 0);
 
-		for (var index = 0; index < array.Length; index++)
+		for (var index = 3; index < array.Length; index++)
 		{
-			if (index < 3)
-			{
-				continue;
-			}
-
 			array[index] = array[index - 1] + array[index - 2] + array[index - 3];
 		}
 
