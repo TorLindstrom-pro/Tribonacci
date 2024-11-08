@@ -2,9 +2,9 @@
 
 public class Xbonacci
 {
-	public static int[] Tribonacci(int[] signature, int length)
+	public static double[] Tribonacci(double[] signature, int length)
 	{
-		var array = new int[length];
+		var array = new double[length];
 		
 		signature.CopyTo(array, 0);
 
@@ -16,7 +16,7 @@ public class Xbonacci
 		return array;
 	}
 
-	private static int SumLastThreeNumbers(int[] array, int index)
+	private static double SumLastThreeNumbers(double[] array, int index)
 	{
 		return array[index - 1] + array[index - 2] + array[index - 3];
 	}
