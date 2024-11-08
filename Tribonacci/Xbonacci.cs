@@ -1,12 +1,14 @@
-﻿namespace Tribonacci;
+﻿using System;
+
+namespace Tribonacci;
 
 public class Xbonacci
 {
 	public static double[] Tribonacci(double[] signature, int length)
 	{
 		var array = new double[length];
-		
-		signature.CopyTo(array, 0);
+
+		Array.Copy(signature, array, Math.Min(signature.Length, length));
 
 		for (var index = 3; index < array.Length; index++)
 		{

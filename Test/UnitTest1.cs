@@ -36,4 +36,14 @@ public class UnitTest1
         yield return [new double[] {0, 1, 1}, new double[] {0, 1, 1, 2, 4, 7, 13, 24}];
         yield return [new double[] {0, 0, 1}, new double[] {0, 0, 1, 1, 2, 4, 7, 13}];
     }
+    
+    [Theory(DisplayName = "Length shorter than signature only returns part of signature")]
+    [InlineData(2, new double[]{1, 1})]
+    [InlineData(0, new double[]{})]
+    public void LengthShorterThanSignature_ReturnsArrayOfLengthLength(int length, double[] expected)
+    {
+        var result = Xbonacci.Tribonacci([1, 1, 1], length);
+        
+        Assert.Equal(expected, result);
+    }
 }
