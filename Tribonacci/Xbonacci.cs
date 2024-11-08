@@ -10,9 +10,14 @@ public class Xbonacci
 
 		for (var index = 3; index < array.Length; index++)
 		{
-			array[index] = array[index - 1] + array[index - 2] + array[index - 3];
+			array[index] = SumLastThreeNumbers(array, index);
 		}
 
 		return array;
+	}
+
+	private static int SumLastThreeNumbers(int[] array, int index)
+	{
+		return array[index - 1] + array[index - 2] + array[index - 3];
 	}
 }
