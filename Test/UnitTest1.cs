@@ -22,11 +22,18 @@ public class UnitTest1
         Assert.Equal(expectedResult, result);
     }
     
-    [Fact(DisplayName = "All ones in signature returns normal tribonacci sequence")]
-    public void AllOnesInSignature_ReturnsNormalTribonacciSequence()
+    [Theory(DisplayName = "Tribonacci sequence is returned based on signature"), MemberData("TribonacciData")]
+    public void AllOnesInSignature_ReturnsNormalTribonacciSequence(int[] signature, int[] expected)
     {
-        var result = Xbonacci.Tribonacci([1, 1, 1], 7);
+        var result = Xbonacci.Tribonacci(signature, 8);
         
-        Assert.Equal([1, 1, 1, 3, 5, 9, 17], result);
+        Assert.Equal(expected, result);
+    }
+    
+    public static IEnumerable<object[]> TribonacciData()
+    {
+        yield return [new[] {1, 1, 1}, new[] {1, 1, 1, 3, 5, 9, 17, 31}];
+        yield return [new[] {0, 1, 1}, new[] {0, 1, 1, 2, 4, 7, 13, 24}];
+        yield return [new[] {0, 0, 1}, new[] {0, 0, 1, 1, 2, 4, 7, 13}];
     }
 }
